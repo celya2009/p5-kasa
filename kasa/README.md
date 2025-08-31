@@ -1,12 +1,28 @@
-# React + Vite
+# Projet Kasa
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
+Ce projet est réalisé dans le cadre de la formation OpenClassrooms.  
+Il s'agit d'un projet de location immobilière fictive nommé **Kasa**, permettant de visualiser et naviguer dans des logements avec leurs détails.
 
-Currently, two official plugins are available:
+## Stack technique
+- React + Vite  
+- HTML / CSS / JavaScript
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Installation
+1. Cloner le dépôt : `git clone https://github.com/celya2009/p5-kasa.git`
+2. Installer les dépendances : `npm install`
+3. Lancer le projet : `npm run dev`
 
-## Expanding the ESLint configuration
+## Structure du projet
+- `src/` → fichiers React (components, pages, utils, etc.)  
+- `public/` → images et fichiers statiques  
+- `vite.config.js` → configuration Vite  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Fonctionnalités principales
+- Liste des logements  
+- Détails des logements  
+- Navigation entre les pages  
+- Affichage des images et informations de chaque logement
+
+## Auteur
+- Malika Salhi
