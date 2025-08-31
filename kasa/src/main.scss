@@ -1,0 +1,32 @@
+@use './sass/base/reset.scss';
+@use './sass/abstracts/variables' as *;
+@use './sass/abstracts/mixins' as *;
+
+// Styles pour mobile (base)
+html, body{
+    margin: 0; 
+    height: auto;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+main{
+    flex: 1; //prend tout l’espace disponible dans la colonne
+    @include padding(0 20px);
+}
+
+// Styles pour desktop et plus grand
+@media screen and (min-width: 1024px) {
+    body{
+        margin: 0 auto;
+        max-width: 1440px;
+    }
+
+    main{
+        @include padding(0 100px);
+    }
+}

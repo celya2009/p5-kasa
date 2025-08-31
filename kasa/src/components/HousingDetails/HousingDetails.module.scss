@@ -1,0 +1,49 @@
+@use '../../sass/abstracts/variables' as *;
+@use '../../sass/abstracts/mixins' as *;
+
+// Styles pour mobile (base)
+.container {
+    @include dimension($width: 100%, $height: auto);
+    margin-top: 15px;
+    margin-bottom: 27px;
+}
+
+.TitleLocationTags {
+    @include flex($justifyContent: start, $alignItems: flex-start, $orientation:column);
+}
+
+.ratingStarsHostInfo {
+    @include flex($justifyContent: space-between);
+    flex-direction: row-reverse;
+    text-align: center;
+}
+
+.dropdown {
+    @include flex($justifyContent: space-between, $orientation: column);
+    gap: 20px;
+    margin-top: 13px;
+    margin-bottom: 27px;
+}
+
+// Styles pour desktop et plus grand
+@media screen and (min-width: 768px) {
+
+    .container {
+        margin-top: 30px;
+        margin-bottom: 50px;
+    }
+
+    .infoWrapper {
+        @include flex($justifyContent: space-between, $alignItems: start);
+    }
+
+    .ratingStarsHostInfo {
+        @include flex($justifyContent: start, $alignItems: flex-end, $orientation:column);
+        gap: 21px;
+    }
+
+    .dropdown {
+        @include flex($justifyContent: space-between, $alignItems: flex-start, $orientation: row);
+        gap: 76px;
+    }
+}

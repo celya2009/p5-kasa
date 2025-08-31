@@ -1,0 +1,35 @@
+@use '../../sass/abstracts/variables' as *;
+@use '../../sass/abstracts/mixins' as *;
+
+// Styles pour mobile (base)
+.footer {
+    @include dimension($width: 100%, $height: 209px);
+    background-color: $footer-background-color;
+
+}
+
+.container {
+    @include flex($orientation: column);
+    @include margin(66px 0);
+}
+
+.p{
+    @include textStyle($fontSize: 0.75rem, $color: $font-text-color);
+    height: 46px;
+    @include flex($alignItems:flex-start);
+    text-align: center;
+    width: calc(100% - 250px);
+}
+
+// Styles pour desktop et plus grand
+@media screen and (min-width: 1024px) {
+
+    .container {
+        @include flex($orientation: column);
+        gap: 1.785rem;
+    }
+
+    .p {
+        @include textStyle($fontSize: 1.5rem, $color: $font-text-color);
+    }
+}

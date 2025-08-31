@@ -1,0 +1,49 @@
+@use '../../../sass/abstracts/variables' as *;
+@use '../../../sass/abstracts/mixins' as *;
+
+// Styles pour mobile (base)
+.container {
+    @include dimension($width: 98px, $height: 18px);
+    border: 2 px solid green;
+}
+
+.ratingStars {
+    display: flex;
+    gap: 6.59px;
+}
+
+.star {
+    @include dimension($width: 18px, $height: 18px);
+}
+
+// Étoile remplie
+.starFilled {
+    @extend .star;
+    color: $background-color;
+}
+
+// Étoile vide
+.starEmpty {
+    @extend .star;
+    color: rgba(227, 227, 227, 1); // Gris clair
+}
+
+// Styles pour desktop et plus grand
+@media screen and (min-width: 1024px) {
+
+    .container {
+        @include dimension($width: 196px, $height: 36px);
+        border: 2 px solid green;
+    }
+
+
+    .ratingStars {
+        display: flex;
+        gap: 10px;
+    }
+
+    .star {
+        @include dimension($width: 36px, $height: 36px);
+        font-size: 1.5rem;
+    }
+}

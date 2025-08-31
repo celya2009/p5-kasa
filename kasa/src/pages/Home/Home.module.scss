@@ -1,0 +1,49 @@
+@use '../../sass/abstracts/variables' as *;
+@use '../../sass/abstracts/mixins' as *;
+
+// Styles pour mobile (base)
+.homeBannerImg {
+    position: absolute;
+    @include dimension($width: 100%, $height: 100%);
+    object-fit: cover;
+    object-position: center 55%;
+    z-index: 1;
+    filter: brightness(0.4); // ajuste l'ombre de l'img
+    @include border(1px solid rgba(0, 0, 0, 1));
+    @include shadow(0 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.homeBannerH1 {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+    width: calc(100% - 100px);
+    @include textStyle(700, normal, 1.5rem, $font-text, #fff);
+    line-height: 100%;
+    z-index: 2;
+}
+
+.container {
+    background-color: rgba(246, 246, 246, 1);
+    @include margin(1.375rem 0 1.7rem 0);
+    @include flex($orientation: column);
+    gap: 20px;
+}
+
+// Styles pour desktop et plus grand
+@media screen and (min-width: 1024px) {
+    .homeBannerH1 {
+        position: absolute;
+        @include textStyle(700, bold, 3rem, $font-text, #fff);
+        text-align: center;
+    }
+
+    .container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); // 3 colonnes
+  gap: 50px; // espace entre les cartes
+  @include padding(56px 50px 43px 50px);
+}
+
+}

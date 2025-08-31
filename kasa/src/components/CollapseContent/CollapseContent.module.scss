@@ -1,0 +1,42 @@
+@use '../../sass/abstracts/variables' as *;
+@use '../../sass/abstracts/mixins' as *;
+
+// Styles pour mobile (base)
+.content {
+	transform-origin: top;
+	transition: all 0.4s ease;
+	overflow: hidden;
+	background-color: rgba(246, 246, 246, 1);
+	@include textStyle(400, normal, 0.75rem);
+}
+
+.open {
+	@extend .content;
+	transition: all 0.4s ease;
+	opacity: 1;
+	max-height: 300px;
+}
+
+.closed {
+	@extend .content;
+	opacity: 0;
+	max-height: 0px;
+  	transition: all 0.4s ease;
+ 	overflow: hidden;
+}
+
+ul, p {
+  @include padding(20px 20px);
+}
+
+// Styles pour desktop et plus grand
+@media screen and (min-width: 1024px) {
+
+  .content {
+    @include textStyle(400, normal, 1.125rem);
+  }
+
+  ul, p {
+    @include padding(20px 16px);
+  }
+}

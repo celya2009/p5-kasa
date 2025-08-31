@@ -1,0 +1,27 @@
+@use '../../../sass/abstracts/variables' as *;
+@use '../../../sass/abstracts/mixins' as *;
+
+// Styles pour mobile (base)
+.container {
+    @include flex($alignItems: flex-start, $orientation: column);
+}
+
+.h1 {
+    @include textStyle($fontSize: 1.125rem, $color: $background-color);
+}
+
+.h2{
+    @include textStyle($fontSize: 0.875rem);
+}
+
+// Styles pour desktop et plus grand
+@media screen and (min-width: 1024px) {
+
+    .h1 {
+        @include textStyle($fontSize: 2.25rem, $color: $background-color);
+    }
+
+    .h2 {
+        @include textStyle($fontSize: 1.125rem)
+    }
+}
