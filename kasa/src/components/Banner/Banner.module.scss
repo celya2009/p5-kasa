@@ -20,6 +20,7 @@
 
 .banner__title {
   position: absolute;
+  text-align: center;
   @include textStyle(700, normal, 1.5rem);
 }
 

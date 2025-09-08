@@ -31,27 +31,32 @@
 }
 
 .h1 {
-    position: absolute;
-    top: 188px;
-    left: 20px;
-    @include textStyle(
-        $fontWeight: 700,
-        $fontStyle: bold,
-        $fontSize: 1.125rem,
-        $color: #fff
-    );
-    padding-right: 20px;
+   position: absolute;
+  bottom: 15px;        // distance par rapport au bas de la card
+  left: 10px;          // distance par rapport à gauche
+  width: 250px;        // largeur fixe pour limiter le texte sur 2 lignes
+  margin: 0;           // supprime toute marge
+  padding: 0;          // supprime padding
+  line-height: 1.2em;  // hauteur d’une ligne
+  max-height: 2.4em;   // exactement 2 lignes
+  overflow: hidden;     // cache tout texte supplémentaire
+  text-align: left;
+
+  @include textStyle(
+    $fontWeight: 700,
+    $fontStyle: bold,
+    $fontSize: 1.125rem,
+    $color: #fff
+  );
 }
 
 // Styles pour desktop et plus grand
 @media screen and (min-width: 1024px) {
-    
-    .card{
-        @include dimension($width: 340px, $height: 340px);
-    }
+  .card {
+    @include dimension($width: 340px, $height: 340px);
+  }
 
-    .h1 {
-        position: absolute;
-        top: 268px;
-    }
+  .h1 {
+    top: 280px;
+  }
 }

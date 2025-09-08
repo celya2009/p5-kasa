@@ -1,7 +1,9 @@
+// Fichier de données pour la section "À propos"
+// Chaque objet représente une section avec un titre et une description
 export const AboutData = [
   {
-    title: "Fiabilité",
-    description: "Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées par nos équipes."
+    title: "Fiabilité", // Titre de la section
+    description: "Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées par nos équipes." // Contenu de la section
   },
   {
     title: "Respect",
