@@ -4,14 +4,17 @@
 // Styles pour mobile (base)
 .banner {
   @include dimension($width: 100%, $height: 111px);
-  @include border($borderRadius: 10px);
+  @include border($borderRadius: 10px,);
+  width: 100%;               // prend toute la largeur disponible
+  height: 100px;
+  border-radius: 10px;
   position: relative;
   overflow: hidden;
-}
+  margin: 0 auto; 
+  }
 
 .banner__image {
-  @include dimension($width: 100%, $height: 100%);
-  background-size: cover;
+  @include dimension($width: 100%, $height: 100%,);
   background-position: center 50%;
   background-repeat: no-repeat;
   transform: scale(1.1); 
@@ -20,8 +23,18 @@
 
 .banner__title {
   position: absolute;
-  text-align: center;
+  text-align: left;
   @include textStyle(700, normal, 1.5rem);
+}
+
+// Tablette : entre mobile et desktop
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .banner {
+    width: 100%;
+    height: 150px;      // hauteur intermédiaire (tu peux ajuster)
+    max-width: 1023px;  // suit la largeur de l’écran
+    margin: 0 auto;
+  }
 }
 
 // Styles pour desktop et plus grand
@@ -30,9 +43,14 @@
     .banner {
         @include dimension($width: 100%, $height: 223px);
         background-position: center;
+        max-width: 1240px; // largeur alignée au container desktop
+       height: 150px;
+       margin: 0 auto; 
+       width: 100%;
     }
 
     .banner__image {
         transform: scale(1); 
     }
+
 }

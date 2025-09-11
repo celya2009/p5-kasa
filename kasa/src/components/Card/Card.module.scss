@@ -4,31 +4,38 @@
 .cards-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); // 3 colonnes égales
-  gap: 20px; // espace entre les cartes
+  gap: 30px; // espace entre les cartes
+  justify-content: center;
 }
 
 // Styles pour mobile (base)
-.card{
-    display: block; //Comme <Link> rend un <a>, il faut lui dire en CSS de se comporter comme un bloc
-    @include dimension($width: 335px, $height: 255px);
-    @include border($borderRadius: 10px);
-    background: linear-gradient(
-        to bottom,
-       rgba(255, 255, 255, 0) 0%,
-       rgba(10, 10, 10, 0) 42%,
-       rgba(4, 4, 4, 0.205) 99.99%,
-       rgba(0, 0, 0, 0.5) 100%
+.card {
+  display: block; // Comme <Link> rend un <a>, il faut lui dire en CSS de se comporter comme un bloc
+  width: 100%; // prend toute la largeur disponible du container
+  margin: 0 auto; // centre la card si max-width est atteinte
+  height: 255px;
+  @include border($borderRadius: 10px);
+  background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(10, 10, 10, 0) 42%,
+      rgba(4, 4, 4, 0.205) 99.99%,
+      rgba(0, 0, 0, 0.5) 100%
     ),
-    $background-color;
-    overflow: hidden; 
-    position: relative;
-}
+  $background-color;
+  overflow: hidden; 
+  position: relative;
+  }
 
 .img {
     @include dimension($width: 100%, $height: 255px);
     position: absolute;
     object-fit: cover;
+    
+  height: calc(95% - 50px); // laisse 40px en bas pour le titre
 }
+
+
 
 .h1 {
    position: absolute;
@@ -53,10 +60,14 @@
 // Styles pour desktop et plus grand
 @media screen and (min-width: 1024px) {
   .card {
-    @include dimension($width: 340px, $height: 340px);
+     margin-top: 20px;
+  margin-bottom: 20px;
+    height: 340px; // on garde la hauteur fixe
+  width: 100%; // prend toute la largeur de sa colonne automatiquement
   }
 
   .h1 {
     top: 280px;
+    text-align: left;
   }
 }

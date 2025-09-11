@@ -37,14 +37,40 @@
   text-underline-offset: 3px;
 }
 
+// Tablette et Desktop
+@media screen and (min-width: 768px) {
+    .header {
+        @include flex($justifyContent: space-between, $alignItems: center);
+        @include dimension(100%, 68px);
+        @include padding(0 30px);
+        @include margin(45px 0 50px 0);
+    }
+
+    .logo {
+        @include dimension($width: auto);
+    }
+
+    .nav {
+        min-width: 190px;
+        gap: 1.625rem;
+    }
+
+    .link {
+        @include textStyle($fontSize: 1.5rem);
+        text-transform: none;
+    }
+}
+
 // Styles pour desktop et plus grand
 @media screen and (min-width: 1024px) {
 
-    .header {
+     .header {
         @include dimension(100%, 68px);
-        @include padding(0 100px);
-        @include margin(45px 0 50px 0);
-        @include flex($justifyContent: space-between)
+        @include padding(0 30px);     // padding réduit 
+        @include margin(45px auto 50px auto); // centré
+        display: flex;
+        justify-content: space-between;
+        max-width: 1240px;           // limite la largeur comme banner et container
     }
 
     .logo{
